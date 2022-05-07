@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- list -->
+    <bean class="com.indialone.collections.Employee" name="employee1">
+        <property name="name" value="UruNatu" />
+        <property name="phones">
+            <list>
+                <value>9429957789</value>
+                <value>6355822985</value>
+                <value>6352517474</value>
+            </list>
+        </property>
+        <property name="addresses">
+            <set>
+                <value>Ahmedabad</value>
+                <value>Deesa</value>
+                <value>Mahor</value>
+            </set>
+        </property>
+        <property name="courses">
+            <map>
+                <entry key="java" value="Java Ultimate course"/>
+                <entry key="kotlin" value="Kotlin Android"></entry>
+                <entry key="python" value="Python machine learning"></entry>
+            </map>
+        </property>
+        <property name="props">
+            <props>
+                <prop key="name">Urunatu</prop>
+                <prop key="channel">Indialone</prop>
+                <prop key="description">This is a coding channel.</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>

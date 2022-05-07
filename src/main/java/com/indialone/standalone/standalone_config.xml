@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:util="http://www.springframework.org/schema/util"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- STANDALONE LIST -->
+
+    <util:list list-class="java.util.LinkedList" id="best_friends">
+        <value>Uru</value>
+        <value>Govind</value>
+        <value>Alok</value>
+        <value>Hardy</value>
+        <value>Pooja</value>
+    </util:list>
+
+    <!-- STANDALONE MAP -->
+
+    <!-- <util:map map-class="java.util.HashMap" id="fee_structure"> -->
+    <util:map map-class="java.util.TreeMap" id="fee_structure">
+        <entry key="Spring Framework" value="8000" />
+        <entry key="Android SDK" value="5000" />
+        <entry key="Flutter" value="6000" />
+        <entry key="Unreal Engine" value="20000" />
+        <entry key="Machine Learning" value="16000" />
+    </util:map>
+
+    <util:properties id="db_config">
+        <prop key="driver">Driver</prop>
+        <prop key="username">User</prop>
+        <prop key="password">Password</prop>
+    </util:properties>
+
+    <bean class="com.indialone.standalone.Person" name="person" >
+        <property name="friends" ref="best_friends" />
+        <property name="feeStructure" ref="fee_structure" />
+        <property name="properties" ref="db_config" />
+
+        <!-- <property name="friends">
+            <ref bean="best_friends"/>
+        </property> -->
+        
+    </bean>
+
+</beans>
